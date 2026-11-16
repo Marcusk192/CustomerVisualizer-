@@ -17,14 +17,14 @@ Edit `config.js`:
 
 1. In the GitHub repository, go to **Settings → Pages**.
 2. Choose **Deploy from a branch**, branch `main`, folder `/ (root)`, then Save.
-3. After a minute the planner is live at `https://<your-github-name>.github.io/<repository-name>/`.
+3. After a minute the planner is live at `https://marcusk192.github.io/CustomerVisualizer-/`.
 
 ## Add it to Wix
 
 In the Wix Editor, choose **Add (+) → Embed Code → Embed HTML**, choose **Code**, paste the snippet below, then click Update:
 
 ```html
-<iframe src="https://<your-github-name>.github.io/<repository-name>/" title="Kitchen planner" style="width:100%;height:760px;border:0"></iframe>
+<iframe src="https://marcusk192.github.io/CustomerVisualizer-/" title="Kitchen planner" style="width:100%;height:760px;border:0"></iframe>
 ```
 
 Stretch the box to full width and make it about 760px tall (about 1000px tall in the mobile editor).
