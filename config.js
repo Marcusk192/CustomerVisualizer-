@@ -11,6 +11,10 @@ window.PLANNER_CONFIG = {
   // and every enquiry after that arrives as an email.
   enquiryEmail: 'info@houseofkitchens.ie',
 
+  // Where the photos are loaded from. 'img/' = the img folder next to index.html.
+  // The single-file Wix version (wix-embed.html) loads them from this GitHub repository instead.
+  imageBase: 'img/',
+
   title: 'Find your kitchen style',
   intro: 'Pick a layout, then try door styles, colours and finishes on real kitchens. Send us your ideas and we will have them ready for your design meeting.',
 

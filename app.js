@@ -18,7 +18,7 @@
   const svg = (markup) => { const d = document.createElement('div'); d.innerHTML = markup.trim(); return d.firstChild; };
 
   // ---------- data from config.js ----------
-  const IMG = 'img/';
+  const IMG = C.imageBase || 'img/';
   const styles = C.styles.map((s) => ({ ...s, colours: s.colours.map(([id, name, hex]) => ({ id, name, hex, image: `${IMG}${s.set}_${id}.jpg`, thumb: `${IMG}${s.set}_${id}-t.jpg` })) }));
   const worktops = C.worktops.map(([id, name, group]) => ({ id, name, group, image: `${IMG}wt_${id}.jpg` }));
   const handles = C.handles.map(([id, name, hex, kind]) => ({ id, name, hex, kind }));
@@ -177,12 +177,12 @@
       const fd = Object.fromEntries(new FormData(form));
       if (fd._honey) return;
       submit.disabled = true; submit.textContent = 'Sending…';
-      const base = new URL('.', location.href).href;
+      const abs = (u) => new URL(u, location.href).href;
       const payload = {
         _subject: `Kitchen ideas from ${fd.name}`, _template: 'table', _captcha: 'false',
         Name: fd.name, Email: fd.email, Phone: fd.phone || '', Area: fd.area || '', Notes: fd.notes || '',
         ...Object.fromEntries(summaryRows()),
-        'Kitchen photo': base + colour().image, 'Worktop sample': base + worktop().image,
+        'Kitchen photo': abs(colour().image), 'Worktop sample': abs(worktop().image),
       };
       try {
         const r = await fetch(`https://formsubmit.co/ajax/${encodeURIComponent(C.enquiryEmail)}`, { method: 'POST', headers: { 'Content-Type': 'application/json', Accept: 'application/json' }, body: JSON.stringify(payload) });
