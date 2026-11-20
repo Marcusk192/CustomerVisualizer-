@@ -22,7 +22,7 @@ Edit `config.js`:
 ## Add it to Wix (single file, copy and paste)
 
 `wix-embed.html` contains the whole planner in one file. In Wix, choose **Add (+) → Embed Code → Embed HTML**, then choose **Code**. Paste in everything from `wix-embed.html` and click Update. Make the box full width and about 760px tall.
-The photos load from this repository through jsDelivr, so **the repository must be public**.
+The photos load straight from this repository on GitHub, so **the repository must be public**.
 After changing `config.js`, `app.js` or `styles.css`, rebuild the file with `python3 tools/build-embed.py`, then paste it into Wix again.
 
 ## Add it to Wix (as a link to the hosted site)
